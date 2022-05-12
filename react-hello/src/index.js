@@ -1,20 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import reactDom from "react-dom";
 
 function HelloWorld() {
   return(
     <div>
-      <Hello/>
+      <Hello bool={false}/>
     </div>
   ); 
 }
 
-function Hello() {
+function Hello({bool}) {
 
-  let bool = false;
+  const [stateBool, setBool] = useState("");
 
+  useEffect(() => {
+    console.log(`changed stateBoot to ${bool}`);
+    setBool(false);
+  });
+  
   return(
-    <span>Holas {bool ? "verda" : "mentiras"}</span>
+    <span>Holas {stateBool ? "verda" : "mentiras"}</span>
   );
 }
 
