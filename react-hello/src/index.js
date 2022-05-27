@@ -1,7 +1,10 @@
-import React, {useState, useEffect} from "react";
+// import React, {useState, useEffect} from "react";
 import reactDom from "react-dom";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-function HelloWorld() {
+
+/* function HelloWorld() {
   return(
     <div>
       <Hello bool={false}/>
@@ -21,8 +24,16 @@ function Hello({bool}) {
   return(
     <span>Holas {stateBool ? "verda" : "mentiras"}</span>
   );
-}
+} */
+
+/* reactDom.render(
+  <HelloWorld/>, document.querySelector("#root")
+); */
 
 reactDom.render(
-  <HelloWorld/>, document.querySelector("#root")
+  
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+  , document.querySelector("#root")
 );
