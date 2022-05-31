@@ -1,3 +1,6 @@
+import { useLocation, NavLink } from "react-router-dom";
+
+
 let invoices = [
   {
     name: "Santa Monica",
@@ -41,4 +44,15 @@ export function getInvoice(number) {
     return invoice.number === number;
   });
   
+}
+
+export function QueryNavLink({ to, ...props }) {
+  let location = useLocation();
+  return <NavLink to={to + location.search} {...props} />;
+}
+
+export function deleteInvoice(number) {
+  invoices = invoices.filter(
+    (invoice) => invoice.number !== number
+  );
 }
